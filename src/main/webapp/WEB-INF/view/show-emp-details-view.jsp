@@ -7,9 +7,12 @@
 
 <br><br>
 
-<%--Your name: ${param.employeeName}--%>
-
-Your name: ${nameAttribute}
+<%--@elvariable id="employee" type="com.hstn.spring.mvc.Employee"--%>
+Your name: ${employee.name}
+<br><br>
+Your surname: ${employee.surname}
+<br><br>
+Your salary: ${employee.salary}
 
 </body>
 </html>
