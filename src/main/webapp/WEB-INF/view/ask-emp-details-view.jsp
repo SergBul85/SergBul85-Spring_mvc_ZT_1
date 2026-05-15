@@ -28,6 +28,10 @@
     </form:select>
     <br>
     <br>
+    Which car do you want?
+    <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
+    <br>
+    <br>
     <%--    Name <form:input path="department"/>--%>
     <input type="submit" value="Ok">
 </form:form>
