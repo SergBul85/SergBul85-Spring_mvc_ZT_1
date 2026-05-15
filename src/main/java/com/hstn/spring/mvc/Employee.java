@@ -4,10 +4,8 @@ package com.hstn.spring.mvc;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +18,9 @@ public class Employee {
 
     @NotBlank(message = "Surname is required")
     private String surname;
+
+    @Min(value = 100, message = "Must be greater than 99")
+    @Max(value = 1000, message = "Must be less than 1001")
     private int salary;
 
     private String department;
@@ -30,6 +31,9 @@ public class Employee {
 
     private String[] languages;
     private Map<String, String> languageList;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Enter valid phone number in format XXX-XX-XX")
+    private String phoneNumber;
 
     public Employee() {
         departments = new HashMap<>();
@@ -48,19 +52,20 @@ public class Employee {
         languageList.put("RU", "Russian");
     }
 
-    public Employee(String name, String surname, int salary, String department) {
-        this.name = name;
-        this.surname = surname;
-        this.salary = salary;
-        this.department = department;
-        departments = new HashMap<>();
-        departments.put("IT", "Information Technology");
-        departments.put("HR", "Human Resources");
-        departments.put("Sales", "Sales");
-    }
 
     @Override
     public String toString() {
-        return "Employee{" + "name='" + name + '\'' + ", surname='" + surname + '\'' + ", salary=" + salary + ", department='" + department + '\'' + '}';
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", salary=" + salary +
+                ", department='" + department + '\'' +
+                ", departments=" + departments +
+                ", carBrand='" + carBrand + '\'' +
+                ", carBrands=" + carBrands +
+                ", languages=" + Arrays.toString(languages) +
+                ", languageList=" + languageList +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }
