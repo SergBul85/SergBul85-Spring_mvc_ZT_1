@@ -14,14 +14,24 @@ public class Employee {
     private String name;
     private String surname;
     private int salary;
+
     private String department;
     private Map<String, String> departments;
+
+    private String carBrand;
+    private Map<String, String> carBrands;
 
     public Employee() {
         departments = new HashMap<>();
         departments.put("IT", "Information Technology");
         departments.put("HR", "Human Resources");
         departments.put("Sales", "Sales");
+
+        carBrands = new HashMap<>();
+        carBrands.put("BMW", "BMW");
+        carBrands.put("Audi", "Audi");
+        carBrands.put("Mercedes-Benz", "MB");
+
     }
 
     public Employee(String name, String surname, int salary, String department) {
