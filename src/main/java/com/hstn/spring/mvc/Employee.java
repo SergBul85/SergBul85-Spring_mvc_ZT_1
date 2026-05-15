@@ -21,6 +21,9 @@ public class Employee {
     private String carBrand;
     private Map<String, String> carBrands;
 
+    private String[] languages;
+    private Map<String, String> languageList;
+
     public Employee() {
         departments = new HashMap<>();
         departments.put("IT", "Information Technology");
@@ -31,6 +34,11 @@ public class Employee {
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
         carBrands.put("Mercedes-Benz", "MB");
+
+        languageList = new HashMap<>();
+        languageList.put("EN", "English");
+        languageList.put("DE", "Deutch");
+        languageList.put("RU", "Russian");
 
     }
 
