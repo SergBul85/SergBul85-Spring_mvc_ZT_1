@@ -1,6 +1,6 @@
 package com.hstn.spring.mvc;
 
-
+import com.hstn.spring.mvc.validation.CheckEmail;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +34,9 @@ public class Employee {
 
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Enter valid phone number in format XXX-XX-XX")
     private String phoneNumber;
+
+    @CheckEmail(value = "abc.com", message = "Must ends abc.com")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
