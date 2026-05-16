@@ -11,7 +11,7 @@
 <br><br>
 
 <%--@elvariable id="employee" type="com.hstn.spring.mvc.Employee"--%>
-<form:form action="showDetails" modelAttribute="employee">
+<form:form action="showDetails" modelAttribute="employee" method="get">
     Name <form:input path="name"/>
     <form:errors path="name"/>
 
@@ -43,11 +43,6 @@
     <br> <br>
     <input type="submit" value="Ok">
 </form:form>
-
-<%--<form action="showDetails" method="get">--%>
-<%--    <input type="text" name="employeeName" placeholder="Write your name">--%>
-<%--    <input type="submit">--%>
-<%--</form>--%>
 
 </body>
 </html>
